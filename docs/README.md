@@ -1,1 +1,0 @@
-# LWP-PING.github.io
