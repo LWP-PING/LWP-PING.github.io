@@ -8,42 +8,36 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>lwp-ping blog</title>
-        <link>https://example.com/</link>
+        <link>https://lwp-ping.github.io/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.73.0 https://gohugo.io/</generator>
         
             <language>en</language>
         
         
-            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
+            <managingEditor>reuixiy@gmail.com (lwp-ping)</managingEditor>
         
         
-            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+            <webMaster>reuixiy@gmail.com (lwp-ping)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 26 Jun 2020 11:02:09 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 26 Jun 2020 11:28:46 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://example.com/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://lwp-ping.github.io/rss.xml" />
         
         
             <item>
                 <title>spark原理综述</title>
-                <link>https://example.com/posts/spark%E5%8E%9F%E7%90%86%E7%BB%BC%E8%BF%B0/</link>
-                <guid isPermaLink="true">https://example.com/posts/spark%E5%8E%9F%E7%90%86%E7%BB%BC%E8%BF%B0/</guid>
+                <link>https://lwp-ping.github.io/posts/spark%E5%8E%9F%E7%90%86%E7%BB%BC%E8%BF%B0/</link>
+                <guid isPermaLink="true">https://lwp-ping.github.io/posts/spark%E5%8E%9F%E7%90%86%E7%BB%BC%E8%BF%B0/</guid>
                 <pubDate>Wed, 24 Jun 2020 16:03:32 &#43;0800</pubDate>
                 
-                    <author>reuixiy@gmail.com (reuixiy)</author>
+                    <author>reuixiy@gmail.com (lwp-ping)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
-                <description>标题H1 标题H2 标题H3222 
-1djifjafjdfisdhfdi
-djifdhifhsifhs
-2dfshsifhsfso
-idhfsihfsihs
-3djifhsofjsof
-cjifjwofewfuworw</description>
+                <description>整体架构  一般，当我们提交一个应用(jar包，py脚本)时，是首先提交到Master(Cluster Manager) ,然后Master会随机选择一个worker去启动Driver(因为Driver是负责收集最后结果数据的，所以要注意OOM问题)，Driver负责创建SparkContext和SparkSession之类的，同时根据任务创建RDD和一系列操作，并把这些信息发送到所谓的Master结点,也即是上图的Cluster Manager(如yarn,Mesos等), Cluster Manager负责整个集群的资源管理，根据应用提交的配置，分配一系列的worker结点(这个一般指物理机，其中会有一个后台进程NodeManager与Cluster Manager进行通信)，同时在worker里面根据内存要求大小等配置，创建executor(对应一个JVM)，一个worker里面可以有分属于不同应用的executor(不同任务数据彼此不共享)。随后，Driver通过把应用分成一系列的task，并把信息发到Master，交由Master进行调度，同时把应用的代码序列化到executor中，在executor中会启动若干个task对数据进行处理。</description>
                 
                 
                 
