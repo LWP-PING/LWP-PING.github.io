@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">lwp-ping blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-06-26T11:31:44&#43;08:00</updated>
+    <updated>2020-06-29T10:02:16&#43;08:00</updated>
     <id>https://lwp-ping.github.io/</id>
     <link rel="alternate" type="text/html" href="https://lwp-ping.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://lwp-ping.github.io/atom.xml" />
@@ -20,14 +20,14 @@
             <title type="text">spark原理综述</title>
             <link rel="alternate" type="text/html" href="https://lwp-ping.github.io/posts/spark%E5%8E%9F%E7%90%86%E7%BB%BC%E8%BF%B0/" />
             <id>https://lwp-ping.github.io/posts/spark%E5%8E%9F%E7%90%86%E7%BB%BC%E8%BF%B0/</id>
-            <updated>2020-06-26T11:14:32&#43;08:00</updated>
+            <updated>2020-06-29T09:59:37&#43;08:00</updated>
             <published>2020-06-24T16:03:32&#43;08:00</published>
             <author>
                     <name>lwp-ping</name>
                     <uri>https://io-oi.me/</uri>
                     <email>reuixiy@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">整体架构  一般，当我们提交一个应用(jar包，py脚本)时，是首先提交到Master(Cluster Manager) ,然后Master会随机选择一个worker去启动Driver(因为Driver是负责收集最后结果数据的，所以要注意OOM问题)，Driver负责创建SparkContext和SparkSession之类的，同时根据任务创建RDD和一系列操作，并把这些信息发送到所谓的Master结点,也即是上图的Cluster Manager(如yarn,Mesos等), Cluster Manager负责整个集群的资源管理，根据应用提交的配置，分配一系列的worker结点(这个一般指物理机，其中会有一个后台进程NodeManager与Cluster Manager进行通信)，同时在worker里面根据内存要求大小等配置，创建executor(对应一个JVM)，一个worker里面可以有分属于不同应用的executor(不同任务数据彼此不共享)。随后，Driver通过把应用分成一系列的task，并把信息发到Master，交由Master进行调度，同时把应用的代码序列化到executor中，在executor中会启动若干个task对数据进行处理。</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;主要是针对日常工作中使用spark碰到的问题的一个小小总结(涉及Executor,Spark,RDD等概念, 是17年还是18年在公司写的文章搬运出来)&lt;/p&gt;</summary>
             
             
             
